@@ -1,12 +1,12 @@
 fibo = [1,2]
 fiboevens = [2]
 def evenFibonacci(n):
-    for i in range(n-2):
+    for i in range(n):
         fibo.append(fibo[i] + fibo[i+1])
-        if fibo[-1] % 2 == 0:
+        if (fibo[-1] % 2 == 0) and (fibo[-1] < n):
             fiboevens.append(fibo[-1])
-    print(fiboevens[-1] + fiboevens[-2])
+        if (fibo[i] + fibo[i+1]) > n:
+            break
+    print(sum(fiboevens))
 
-evenFibonacci(10)
-print (fibo)
-print (fiboevens)
+evenFibonacci(4000000)
